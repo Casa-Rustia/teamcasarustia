@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Casa Rustia | Your Remote Dream Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #003366;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+      padding: 0.5rem 1rem;
+    }
+
+    nav a:hover {
+      color: #f5b301;
+    }
+
+    header {
+      background-color: #004c99;
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    header img {
+      width: 30%;
+      max-width: 120px;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 2.5rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #004c99;
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .services,
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background-color: #004c99;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #f1f1f1;
+      font-size: 0.9rem;
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 250px;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .team-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: auto;
+    }
+
+    .card-text h3 {
+      margin: 0.5rem 0 0.3rem;
+    }
+
+    .card-text p {
+      margin: 0.2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        padding: 0.5rem;
+      }
+
+      header img {
+        width: 40%;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#services">Services & Testimonials</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Header -->
+  <header id="home">
+    <img src="images/logo.png" alt="Team Casa Rustia Logo">
+    <h1>From Runways & Roadtrips to Remote Hustlers</h1>
+    <h1>"Team Casa Rustia"</h1>
+    <p>We're a couple who traded uniforms for laptops, turning our passion into a lifestyle.</p>
+  </header>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>From Tour Guiding and Flying to Hustling from Home</h2>
+    <div class="gallery">
+      <img src="images/alvin_guiding.jpg" alt="Ace guiding tourists">
+      <img src="images/vanna_flights.jpeg" alt="Vanna as flight attendant">
+      <img src="images/wfh.jpeg" alt="Work-from-home setup">
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card"><h3>Virtual Assistance</h3><p>Managing emails, calendars, and admin tasks remotely.</p></div>
+      <div class="card"><h3>Translation & Localization</h3><p>Multilingual services tailored to your market.</p></div>
+      <div class="card"><h3>Content Writing</h3><p>Blogs, web copy, and more. Crafted with care.</p></div>
+      <div class="card"><h3>Voice-Over Services</h3><p>Engaging voiceovers in English and Tagalog for videos and audio content.</p></div>
+      <div class="card"><h3>Travel Planning</h3><p>Customized travel itineraries, tips, and bookings.</p></div>
+      <div class="card"><h3>Virtual Staffing</h3><p>Connect with skilled remote pros ready to help.</p></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
+      <div class="card">
+        <p>"May I say that your Filipino voice talent has a good clear voice."</p>
+        <strong>- Aurora, Northern Territory</strong>
+      </div>
+      <div class="card">
+        <p>"Ace and Vanna were a game-changer for our business. Reliable, fast, and great communication."</p>
+        <strong>- Marcus, Melbourne</strong>
+      </div>
+      <div class="card">
+        <p>"Their attention to detail and service mindset really shows. We love working with them!"</p>
+        <strong>- Sophie, Sydney</strong>
+      </div>
+      <div class="card">
+        <p>"Ace and Vanna made everything so easy. They're reliable, talented, and just great to work with."</p>
+        <strong>- Cindy, Perth</strong>
+      </div>
+	  <div class="card">
+        <p>"Brilliant team! Ace and Vanna made our project feel effortless. Super organised,
+		quick to respond, and genuinely lovely to work with. Absolutely top-notch service!"</p>
+        <strong>- James, London</strong>
+      </div>
+	  <div class="card">
+        <p>"Dream team! Fast, reliable, and incredibly easy to work with.
+		They handled our voice-over project like pros and made everything stress-free. Can’t wait to work with them again!"</p>
+        <strong>- Amanda, Seattle</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Team Casa Rustia (Ace & Vanna). Based in the Philippines.</p>
+    <p>Imus City, Cavite, Philippines</p>
+    <p>
+      Connect with us:<br />
+      <a href="https://www.facebook.com/profile.php?id=61573433775439" target="_blank">Facebook</a> |
+      <a href="https://www.instagram.com/casa.rustia/" target="_blank">Instagram</a>
+    </p>
+  </footer>
+
+</body>
+</html>
