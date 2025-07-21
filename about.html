@@ -110,7 +110,7 @@
     .content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease-out;
+      transition: max-height 0.5s ease;
       margin-top: 0.5rem;
       font-size: 0.95rem;
       color: #555;
@@ -119,8 +119,7 @@
     }
 
     .content.open {
-      max-height: 1000px; /* Safe upper limit for expansion */
-      transition: max-height 0.6s ease-in;
+      /* max-height will be set dynamically in JS */
     }
 
     footer {
@@ -210,24 +209,13 @@
 
   <section id="about">
     <h2>Our Journey</h2>
-    <p>
-      We are Ace and Vanna, partners in life, travel, and now remote work...
-    </p>
-    <p>
-      Vanna, on the other hand, was soaring high as a senior flight attendant...
-    </p>
-    <p>
-      Together, we traded airports and offices for laptops and home studios...
-    </p>
+    <p>We are Ace and Vanna...</p>
 
     <h2>Our Vision</h2>
-    <p>
-      To build a world where remote work feels human...
-    </p>
+    <p>To build a world where remote work feels human...</p>
+
     <h2>Our Mission</h2>
-    <p>
-      We connect passionate people with purposeful work...
-    </p>
+    <p>We connect passionate people with purposeful work...</p>
   </section>
 
   <section id="team">
@@ -239,11 +227,11 @@
         <img src="images/alvin.jpg" alt="Alvin Rustia" />
         <div class="card-text">
           <h3>Alvin (Ace) Rustia</h3>
-          <h4>Co-Founder & Operations Director / COO</h4>
+          <h4>Co-Founder & COO</h4>
           <button class="collapsible">Read Bio</button>
           <div class="content">
             <p>
-              From tour guiding to team building, Ace Rustia has mastered...
+              From tour guiding to team building, Ace Rustia has mastered the art of getting people where they need to be...
             </p>
           </div>
         </div>
@@ -254,11 +242,11 @@
         <img src="images/ylona.jpeg" alt="Ylona Rustia" />
         <div class="card-text">
           <h3>Ylona (Vanna) Rustia</h3>
-          <h4>Co-Founder & Creative Director / CTO</h4>
+          <h4>Co-Founder & CTO</h4>
           <button class="collapsible">Read Bio</button>
           <div class="content">
             <p>
-              Ylona “Vanna” Rustia is the kind of woman who can switch...
+              Ylona “Vanna” Rustia is the kind of woman who can switch from soothing voiceovers to juggling deadlines...
             </p>
           </div>
         </div>
@@ -278,11 +266,18 @@
   </footer>
 
   <script>
-    document.querySelectorAll(".collapsible").forEach(btn => {
-      btn.addEventListener("click", function () {
+    document.querySelectorAll(".collapsible").forEach(button => {
+      button.addEventListener("click", function () {
         const content = this.nextElementSibling;
-        this.classList.toggle("active");
-        content.classList.toggle("open");
+        const isOpen = content.classList.contains("open");
+
+        if (isOpen) {
+          content.style.maxHeight = null;
+          content.classList.remove("open");
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.classList.add("open");
+        }
       });
     });
   </script>
