@@ -110,7 +110,7 @@
     .content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.5s ease;
+      transition: max-height 0.4s ease;
       margin-top: 0.5rem;
       font-size: 0.95rem;
       color: #555;
@@ -118,8 +118,8 @@
       padding: 0 1rem;
     }
 
-    .content.open {
-      /* max-height will be set dynamically in JS */
+    .collapsible.active + .content {
+      max-height: 1000px;
     }
 
     footer {
@@ -206,16 +206,34 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-
+  
   <section id="about">
     <h2>Our Journey</h2>
-    <p>We are Ace and Vanna...</p>
+    <p>
+      We are Ace and Vanna, partners in life, travel, and now remote work. Ace spent over a decade guiding tourists around the Philippines,
+      managing travel experiences, and working with clients as an account executive. When the world shifted, so did he. First landing a role
+      in case management for a UK e-commerce company, and eventually finding his stride as a project manager for a translation and localisation
+      company in Australia.
+    </p>
+    <p>
+      Vanna, on the other hand, was soaring high as a senior flight attendant for nearly ten years, offering world-class service to passengers from all walks of life.
+      She took a leap into remote work, turning her voice and storytelling skills into a career in voice artistry, copywriting, and project coordination.
+    </p>
+    <p>
+      Together, we traded airports and offices for laptops and home studios - building a life that blends flexibility, creativity, and meaningful work with people
+      from all over the globe.
+    </p>
 
     <h2>Our Vision</h2>
-    <p>To build a world where remote work feels human...</p>
-
+    <p>
+      To build a world where remote work feels human. At Team Casa Rustia, we imagine a global community where skilled professionals
+      from all walks of life can thrive, where flexibility fuels productivity, family comes first, and every project is built on trust.
+    </p>
     <h2>Our Mission</h2>
-    <p>We connect passionate people with purposeful work...</p>
+    <p>
+      We connect passionate people with purposeful work. Team Casa Rustia bridges the gap between businesses and exceptional remote talent.
+      With heart-led service, professional excellence, and contagious enthusiasm, we make virtual staffing feel seamless and sincere.
+    </p>
   </section>
 
   <section id="team">
@@ -227,11 +245,16 @@
         <img src="images/alvin.jpg" alt="Alvin Rustia" />
         <div class="card-text">
           <h3>Alvin (Ace) Rustia</h3>
-          <h4>Co-Founder & COO</h4>
+          <h4>Co-Founder & Operations Director / Chief Operating Officer (COO)</h4>
           <button class="collapsible">Read Bio</button>
           <div class="content">
             <p>
-              From tour guiding to team building, Ace Rustia has mastered the art of getting people where they need to be...
+              From tour guiding to team building, Ace Rustia has mastered the art of getting people where they need to be—whether it’s a remote island or a remote job.
+              He started as a Tour Guide and Travel Manager, making sure tourists didn’t miss the best spots (or the van). Now, he’s the Co-Founder and COO of Team Casa Rustia,
+              managing global operations, virtual teams, and the occasional tech hiccup—all without leaving his house (or his coffee mug).
+              Ace runs tight projects, juggles 15+ languages at a time, and still finds a way to keep things light.
+              He’s your go-to guy for turning chaos into clarity—with a little humor and a lot of heart.
+              Because let’s be real: if you can manage a bus full of jetlagged tourists, running a virtual company is just another adventure.
             </p>
           </div>
         </div>
@@ -242,11 +265,15 @@
         <img src="images/ylona.jpeg" alt="Ylona Rustia" />
         <div class="card-text">
           <h3>Ylona (Vanna) Rustia</h3>
-          <h4>Co-Founder & CTO</h4>
+          <h4>Co-Founder & Creative Director / Chief Talent Officer (CTO)</h4>
           <button class="collapsible">Read Bio</button>
           <div class="content">
             <p>
-              Ylona “Vanna” Rustia is the kind of woman who can switch from soothing voiceovers to juggling deadlines...
+              Ylona “Vanna” Rustia is the kind of woman who can switch from soothing voiceovers to juggling deadlines faster than you can say “mic check.”
+              A professional voice artist, language project coordinator, and all-around communication wizard, Vanna turned her talent for storytelling and sharp attention to detail into a powerhouse role behind the scenes of global translation projects.
+              She doesn’t just speak clearly—she thinks clearly, plans precisely, and keeps the whole ship sailing smoothly (even when the waters get rough).
+              From directing voice work with perfect tone to coordinating diverse teams across time zones, she brings both warmth and whip-smart efficiency to every task.
+              And yes—she is the voice behind that perfectly pronounced videos you watched without realizing it.
             </p>
           </div>
         </div>
@@ -266,18 +293,9 @@
   </footer>
 
   <script>
-    document.querySelectorAll(".collapsible").forEach(button => {
-      button.addEventListener("click", function () {
-        const content = this.nextElementSibling;
-        const isOpen = content.classList.contains("open");
-
-        if (isOpen) {
-          content.style.maxHeight = null;
-          content.classList.remove("open");
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-          content.classList.add("open");
-        }
+    document.querySelectorAll(".collapsible").forEach(btn => {
+      btn.addEventListener("click", function () {
+        this.classList.toggle("active");
       });
     });
   </script>
